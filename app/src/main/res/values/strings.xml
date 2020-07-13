@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">insta_basic</string>
-    <string name="facebook_app_id">592638904497102</string>
-    <string name="fb_login_protocol_scheme">fb592638904497102</string>
+    <string name="facebook_app_id">296712071479534</string>
+    <string name="fb_login_protocol_scheme">fb296712071479534</string>
 
     <!-- Sign In -->
     <string name="email">Email</string>

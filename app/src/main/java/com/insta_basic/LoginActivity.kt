@@ -84,7 +84,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun facebookLogin() {
         LoginManager.getInstance()
-            .logInWithReadPermissions(this, Arrays.asList("public_profile","eamil"))
+            .logInWithReadPermissions(this, Arrays.asList("public_profile", "email"))
 
         LoginManager.getInstance()
             .registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
@@ -121,11 +121,11 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        callbackManager?.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == GOOGLE_LOGIN_CODE) {
+        callbackManager?.onActivityResult(requestCode,resultCode,data)
+        if(requestCode == GOOGLE_LOGIN_CODE){
             var result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
-            if (result!!.isSuccess) {
-                var account = result?.signInAccount
+            if(result.isSuccess){
+                var account = result.signInAccount
                 //Second step
                 firebaseAuthWithGoogle(account)
             }

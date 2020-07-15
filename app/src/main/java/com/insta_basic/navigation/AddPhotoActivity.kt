@@ -12,7 +12,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import com.insta_basic.R
-//import com.insta_basic.navigation.model.ContentDTO
+import com.insta_basic.navigation.model.ContentDTO
 import kotlinx.android.synthetic.main.activity_add_photo.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -70,24 +70,24 @@ class AddPhotoActivity : AppCompatActivity() {
         storageRef?.putFile(photoUri!!)?.continueWithTask { task: Task<UploadTask.TaskSnapshot> ->
             return@continueWithTask storageRef.downloadUrl
         }?.addOnSuccessListener { uri ->
-            //var contentDTO = ContentDTO()
+            var contentDTO = ContentDTO()
 
             //Insert downloadUrl of image
-            //contentDTO.imageUrl = uri.toString()
+            contentDTO.imageUrl = uri.toString()
 
             //Insert uid of user
-            //contentDTO.uid = auth?.currentUser?.uid
+            contentDTO.uid = auth?.currentUser?.uid
 
             //Insert userId
-            //contentDTO.userId = auth?.currentUser?.email
+            contentDTO.userId = auth?.currentUser?.email
 
             //Insert explain of content
-            //contentDTO.explain = addphoto_edit_explain.text.toString()
+            contentDTO.explain = addphoto_edit_explain.text.toString()
 
             //Insert timestamp
-            //contentDTO.timestamp = System.currentTimeMillis()
+            contentDTO.timestamp = System.currentTimeMillis()
 
-            //firestore?.collection("images")?.document()?.set(contentDTO)
+            firestore?.collection("images")?.document()?.set(contentDTO)
 
             setResult(Activity.RESULT_OK)
 

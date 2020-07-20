@@ -59,9 +59,5 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
     }
 
-    bottomBar.setOnItemSelectListener( object :ReadableBottomBar.ItemSelectListener{
-        override fun onItemSelected(index: Int) {
-        }
-    })
 
 }

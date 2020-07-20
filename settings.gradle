@@ -1,2 +1,2 @@
-include ':app'
-rootProject.name = "insta_basic"
+//include ':app'
+//project(':app').projectDir=new File('D:\\Works\\PG_Works\\module\\ReadableBottomBar-master')
